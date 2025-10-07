@@ -1,4 +1,5 @@
 from google.adk.agents import Agent
+from TrendGen.subAgents.overallAgent.agent import overallAgent
 
 root_agent = Agent(
     name="input_manager",
@@ -68,5 +69,5 @@ root_agent = Agent(
         -> It must log and clearly explain its delegation choice in the JSON output.
         """
     ),
-    sub_agents=[],
+    sub_agents=[overallAgent],
 )
