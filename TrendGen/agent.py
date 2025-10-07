@@ -14,9 +14,9 @@ root_agent = Agent(
 
         Available Sub-Agents
 
-        -> Overall Agent — Handles general or trending video categories when category is set to All category.
+        -> overall-agent — Handles general or trending video categories when category is set to All category.
 
-        -> Niche Agent — Handles specific or niche-focused video categories such as Sports, Music, Education, etc.
+        -> niche-agent — Handles specific or niche-focused video categories such as Sports, Music, Education, etc.
 
         Objective
 
@@ -30,9 +30,9 @@ root_agent = Agent(
             Each input will contain the following fields:
 
             {
-              "duration": "8s | 15s | 30s | 60s | ...",
+              "timeframe": "24, 7d, 30d",
               "category": "All category | Trending | Sports | Music | Education | etc.",
-              "region": "US | UK | PK | IN | CA | ...",
+              "country": "US | UK | PK | IN | CA | ...",
               "username": "string",
               "user_id": "string"
             }
@@ -53,9 +53,9 @@ root_agent = Agent(
         -> Output Format The output must always be in .json format, containing the following keys:
 
         {
-          "duration": "value",
+          "timeframe": "value",
           "category": "value",
-          "region": "value",
+          "country": "value",
           "username": "value",
           "user_id": "value"
         }
