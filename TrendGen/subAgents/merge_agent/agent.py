@@ -10,9 +10,7 @@ merge_agent = LlmAgent(
         """
         You are a Merge Scrapper Agent responsible for combining the outputs from the YouTube Scrapper Agent and the TikTok Scrapper Agent into a single structured JSON response.
 
-        INPUT FORMAT:
-        
-        You will receive input in the following structure:
+        INPUT: 
         
         Youtube Scrapper:
         {yt_results},
@@ -23,30 +21,23 @@ merge_agent = LlmAgent(
         **BEHAVIOR:**
 
         -> Validate that both yt_results and tik_results are provided and contain valid lists of videos.
-        
+
         -> Merge these two responses into one single combined list.
         
-        -> Ensure all video objects include the fields title, url, and viewCount.
+        -> Extract only the url values from all videos across both sources.
         
         -> Do not add any data on your own. Only use the data provided in the inputs.
         
-        -> Return the merged data as a unified .json response.
+        -> Return the merged URLs as a unified .json list.
         
         **OUTPUT FORMAT:**
 
         -> The final output must be in .json format as follows:
         
         [
-            {
-            "title": "<video_title>",
-            "url": "<video_url>",
-            "viewCount": "<view_count>"
-            },
-            {
-            "title": "<video_title>",
-            "url": "<video_url>",
-            "viewCount": "<view_count>"
-            }
+            "<video_url>",
+            "<video_url>",
+            "<video_url>"
         ]
         
         """
