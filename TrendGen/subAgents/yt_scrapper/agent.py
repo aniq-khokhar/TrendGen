@@ -1,5 +1,5 @@
 from google.adk.agents import LlmAgent
-from TrendGen.tools.yt_scrapper import yt_scrapper
+from TrendGen.tools.yt_scrap import yt_scrap
 
 
 yt_scrapper = LlmAgent(
@@ -30,8 +30,12 @@ yt_scrapper = LlmAgent(
         
         ---
         
+        INPUT:
+        **Google Scrapper Result:**
+        {google_results}
+        
         INPUT FORMAT:
-
+        
         {
             "top_keywords": [
                 {
@@ -91,7 +95,7 @@ yt_scrapper = LlmAgent(
 
         """
     ),
-    tools=[yt_scrapper],
+    tools=[yt_scrap],
     output_key="yt_results",
 )
 
